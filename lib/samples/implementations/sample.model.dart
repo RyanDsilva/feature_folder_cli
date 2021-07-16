@@ -41,9 +41,9 @@ class $modelName {
   String toRawJson() => json.encode(toJson());
 
   factory $modelName.fromJson(dynamic json) => $modelName(
-      s: json['s'] == null ? null : json['s'].toString(),
-      n: json['n'] == null ? null : int.parse(json['n'].toString()),
-      b: json['b'] == null ? null : json['b'].toString() == 'true',
+      s: json['s'] == null ? null : json['s'] as String,
+      n: json['n'] == null ? null : json['n'] as int,
+      b: json['b'] == null ? null : json['b'] as bool,
   );
 
   Map<String, dynamic> toJson() => {
