@@ -10,7 +10,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  args: ^2.1.1
+  logging: ^1.0.1
+  path: ^1.8.0
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+  test: ^1.17.10
