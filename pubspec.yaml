@@ -2,6 +2,7 @@ name: feature_folder_cli
 description: CLI utility to generate folder by feature structure
 version: 0.0.1
 homepage: https://github.com/RyanDsilva/feature_folder_cli
+documentation: https://github.com/RyanDsilva/feature_folder_cli#folder-by-feature-cli-utility
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -10,9 +11,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  ansicolor: ^2.0.1
   args: ^2.1.1
-  logging: ^1.0.1
   path: ^1.8.0
+  recase: ^4.0.0
 
 dev_dependencies:
   test: ^1.17.10
+
+executables:
+  ff: main

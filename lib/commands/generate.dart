@@ -1,5 +1,9 @@
 import 'package:args/command_runner.dart';
 
+import '../samples/implementations/index.dart';
+import '../utils/directory.dart';
+import '../utils/logs.dart';
+
 class GenerateCommand extends Command {
   final String _name = 'generate';
   final String _description =
@@ -22,6 +26,18 @@ class GenerateCommand extends Command {
 
   @override
   void run() {
-    print(argResults?['name']);
+    SampleScreen(
+      DirectoryService.paths['example']!,
+      argResults!['name'].toString(),
+    )..create();
+    SampleWidget(
+      DirectoryService.paths['example']!,
+      argResults!['name'].toString(),
+    )..create();
+    SampleModel(
+      DirectoryService.paths['example']!,
+      argResults!['name'].toString(),
+    )..create();
+    LogService.success('Feature ${argResults!['name']} created successfully');
   }
 }

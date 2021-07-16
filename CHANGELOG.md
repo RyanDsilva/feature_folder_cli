@@ -1,3 +1,5 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* Ability to generate screen, widgets
+* Ability to generate data models
+* Ability to generate data repository, services and providers
