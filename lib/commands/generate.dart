@@ -31,7 +31,7 @@ class GenerateCommand extends Command {
 
   @override
   void run() {
-    _generateItems(dryRun: true);
+    _generateItems();
     LogService.success('Feature ${argResults!['name']} created successfully');
   }
 
