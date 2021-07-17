@@ -3,6 +3,8 @@ import 'package:recase/recase.dart';
 import '../../utils/directory.dart';
 import '../sample.dart';
 
+/// [SampleModel] is the base class from which
+/// the model for the feature is created
 class SampleModel extends Sample {
   final String _featureName;
 
@@ -12,8 +14,8 @@ class SampleModel extends Sample {
   ) : super(path);
 
   String get modelName {
-    final widgetName = '$_featureName' 'Model';
-    return ReCase(widgetName).pascalCase;
+    final modelName = '$_featureName' 'Model';
+    return ReCase(modelName).pascalCase;
   }
 
   @override
@@ -56,4 +58,10 @@ class $modelName {
 
   @override
   String get content => _content;
+
+  @override
+  String get exportContent => throw UnimplementedError();
+
+  @override
+  String get exportFullPath => throw UnimplementedError();
 }

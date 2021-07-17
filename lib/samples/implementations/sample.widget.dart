@@ -3,6 +3,8 @@ import 'package:recase/recase.dart';
 import '../../utils/directory.dart';
 import '../sample.dart';
 
+/// [SampleWidget] is the base class from which
+/// the widget for the feature is created
 class SampleWidget extends Sample {
   final String _featureName;
 
@@ -43,4 +45,14 @@ class $widgetName extends StatelessWidget {
 
   @override
   String get content => _content;
+
+  @override
+  String get exportFullPath {
+    return DirectoryService.replaceAsExpected(
+        path: '$path/$_featureName/' 'widgets/widgets.dart');
+  }
+
+  @override
+  String get exportContent => '''export '${_featureName}_widget.dart';
+''';
 }

@@ -1,7 +1,10 @@
 name: feature_folder_cli
-description: CLI utility to generate folder by feature structure
-version: 0.0.1-dev.1
+description: >-
+  CLI utility that generates a folder structure to reduce the repetitive work required to setup directories for models, services, repositories, screens and widgets.
+version: 0.0.2
+
 homepage: https://github.com/RyanDsilva/feature_folder_cli
+
 documentation: https://github.com/RyanDsilva/feature_folder_cli#folder-by-feature-cli-utility
 
 environment:

@@ -3,6 +3,8 @@ import 'package:recase/recase.dart';
 import '../../utils/directory.dart';
 import '../sample.dart';
 
+/// [SampleScreen] is the base class from which
+/// the screen for the feature is created
 class SampleScreen extends Sample {
   final String _featureName;
 
@@ -43,4 +45,14 @@ class $screenName extends StatelessWidget {
 
   @override
   String get content => _content;
+
+  @override
+  String get exportFullPath {
+    return DirectoryService.replaceAsExpected(
+        path: '$path/$_featureName/' 'screens/screens.dart');
+  }
+
+  @override
+  String get exportContent => '''export '${_featureName}_screen.dart';
+''';
 }
