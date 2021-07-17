@@ -3,7 +3,7 @@ import 'dart:io';
 class DirectoryService {
   static final Map<String, String> _paths = {
     'feature': replaceAsExpected(path: 'lib'),
-    'example': replaceAsExpected(path: 'examples'),
+    'example': replaceAsExpected(path: 'example'),
   };
 
   static Map<String, String> get paths => _paths;

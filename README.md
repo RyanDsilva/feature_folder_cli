@@ -1,5 +1,7 @@
 # Folder by Feature CLI Utility
 
+> This is a WIP
+
 A Dart CLI tool that generates the folder structure for the folder-by-feature pattern
 
 ```md
