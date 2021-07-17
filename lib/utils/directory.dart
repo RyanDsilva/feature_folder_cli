@@ -1,6 +1,6 @@
 import 'dart:io';
 
-/// [DirectoryService] contains utilities related to 
+/// [DirectoryService] contains utilities related to
 /// directory structures and file paths
 class DirectoryService {
   static final Map<String, String> _paths = {

@@ -7,7 +7,7 @@ class Feature1Widget extends StatelessWidget {
     return Container(
       child: Center(
         child: Text(
-          'Feature1Widget is working', 
+          'Feature1Widget is working',
         ),
       ),
     );

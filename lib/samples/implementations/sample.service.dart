@@ -31,7 +31,8 @@ class SampleService extends Sample {
             '_service.dart');
   }
 
-  String get _content => '''import '../repository/${_featureName}_repository.dart';
+  String get _content =>
+      '''import '../repository/${_featureName}_repository.dart';
 
 class $serviceName implements $repositoryName {
   @override

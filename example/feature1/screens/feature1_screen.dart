@@ -7,7 +7,7 @@ class Feature1Screen extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Text(
-          'Feature1Screen is working', 
+          'Feature1Screen is working',
         ),
       ),
     );

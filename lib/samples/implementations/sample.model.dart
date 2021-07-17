@@ -21,7 +21,8 @@ class SampleModel extends Sample {
   @override
   String get fullPath {
     return DirectoryService.replaceAsExpected(
-        path: '$path/$_featureName/' 'domain/models/$_featureName' '_model.dart');
+        path:
+            '$path/$_featureName/' 'domain/models/$_featureName' '_model.dart');
   }
 
   String get _content => '''import 'dart:convert';

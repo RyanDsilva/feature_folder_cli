@@ -38,7 +38,7 @@ abstract class Sample {
   /// [exportFullPath] needs to be fully qualified path
   /// where the export file needs to be created
   ///
-  /// [exportContent] is the raw string containing the 
+  /// [exportContent] is the raw string containing the
   /// contents of the export file
   void createExportFile() {
     FileService.writeFile(exportFullPath, exportContent);
