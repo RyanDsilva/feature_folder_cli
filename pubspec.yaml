@@ -1,6 +1,6 @@
 name: feature_folder_cli
 description: CLI utility to generate folder by feature structure
-version: 0.0.1
+version: 0.0.1-dev.1
 homepage: https://github.com/RyanDsilva/feature_folder_cli
 documentation: https://github.com/RyanDsilva/feature_folder_cli#folder-by-feature-cli-utility
 
