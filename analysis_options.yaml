@@ -1,8 +1,5 @@
-exclude:
-  - examples/**/**.dart
-  - lib/bricks/**/**.dart
-
 analyzer:
+  exclude: [example/**, lib/bricks/**]
   strong-mode:
     implicit-casts: false
 

@@ -52,6 +52,11 @@ class GenerateCommand extends Command {
     LogService.success('Feature ${argResults!['name']} created successfully');
   }
 
+  /// The _generateGetXItems function generates the folder structure according
+  /// GetX imports and usage. You have to import the `get` library manually in
+  /// your pubspec.yaml file
+  ///
+  /// [dryRun] is a dev-only boolean to generate example folders
   Future<void> _generateGetXItems({bool dryRun = true}) async {
     var dir = 'feature';
     if (dryRun) {
@@ -73,6 +78,10 @@ class GenerateCommand extends Command {
     }
   }
 
+  /// The _generateItems function generates the folder structure according
+  /// feature by folder pattern.
+  ///
+  /// [dryRun] is a dev-only boolean to generate example folders
   void _generateItems({bool dryRun = true}) {
     var dir = 'feature';
     if (dryRun) {
