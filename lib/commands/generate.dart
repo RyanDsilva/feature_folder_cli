@@ -52,7 +52,7 @@ class GenerateCommand extends Command {
     LogService.success('Feature ${argResults!['name']} created successfully');
   }
 
-  Future<void> _generateGetXItems({bool dryRun = false}) async {
+  Future<void> _generateGetXItems({bool dryRun = true}) async {
     var dir = 'feature';
     if (dryRun) {
       dir = 'example';
@@ -73,7 +73,7 @@ class GenerateCommand extends Command {
     }
   }
 
-  void _generateItems({bool dryRun = false}) {
+  void _generateItems({bool dryRun = true}) {
     var dir = 'feature';
     if (dryRun) {
       dir = 'example';
