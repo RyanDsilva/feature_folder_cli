@@ -1,1 +1,0 @@
-class Feature1Provider {}

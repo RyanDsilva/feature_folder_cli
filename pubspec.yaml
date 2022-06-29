@@ -1,8 +1,9 @@
 name: feature_folder_cli
 description: >-
-  CLI utility that generates a folder structure to reduce the repetitive work required to setup directories for models, services, repositories, screens and widgets.
-version: 0.0.4
-
+  CLI utility that generates a folder structure to reduce the repetitive work
+  required to setup directories for models, services, repositories, screens and
+  widgets.
+version: 0.1.0
 homepage: https://github.com/RyanDsilva/feature_folder_cli
 
 documentation: https://github.com/RyanDsilva/feature_folder_cli#folder-by-feature-cli-utility
@@ -12,15 +13,14 @@ environment:
   flutter: ">=2.0.0"
 
 dependencies:
-  flutter:
-    sdk: flutter
   ansicolor: ^2.0.1
-  args: ^2.1.1
-  path: ^1.8.0
+  args: ^2.3.1
+  mason: ^0.1.0-dev.26
+  path: ^1.8.2
   recase: ^4.0.0
 
 dev_dependencies:
-  test: ^1.17.10
+  test: ^1.21.3
 
 executables:
   ff: main
