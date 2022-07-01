@@ -8,6 +8,6 @@ environment:
 vars:
   name:
     type: string
-    description: Enter the feature name [PascalCase only]
+    description: Enter the feature name [lowercase only]
     default: feature
-    prompt: Enter the feature name [PascalCase only]
+    prompt: Enter the feature name [lowercase only]

@@ -39,6 +39,8 @@ class GenerateCommand extends Command {
 
   @override
   void run() {
+    final time = Stopwatch();
+    time.start();
     switch (argResults!['type'].toString()) {
       case 'simple':
         generateSimple(argResults!);
@@ -50,6 +52,8 @@ class GenerateCommand extends Command {
         LogService.error('Invalid Arguments');
         break;
     }
+    time.stop();
+    LogService.info('Time Taken: ${time.elapsed.inMilliseconds} milliseconds');
     LogService.success('Feature ${argResults!['name']} created successfully');
   }
 }
