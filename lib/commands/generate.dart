@@ -1,10 +1,6 @@
-import 'dart:io';
-
 import 'package:args/command_runner.dart';
-import 'package:mason/mason.dart';
 
-import '../samples/implementations/index.dart';
-import '../utils/directory.dart';
+import '../functions/index.dart';
 import '../utils/logs.dart';
 
 /// [GenerateCommand] is used to generate new files for a feature
@@ -17,7 +13,8 @@ class GenerateCommand extends Command {
   ///
   /// [name] is a required argument that represents the name of the feature
   /// to be created
-  /// [type] is a optional argument that represents the type of the feature
+  ///
+  /// [type] is a required argument that represents the type of the feature
   /// to be created
   GenerateCommand() {
     argParser.addOption(
@@ -29,8 +26,8 @@ class GenerateCommand extends Command {
     argParser.addOption(
       'type',
       abbr: 't',
-      mandatory: false,
-      help: 'Type of feature:\n[getx] GetX',
+      mandatory: true,
+      help: 'Type of feature:\n[simple] Simple\n[getx] GetX',
     );
   }
 
@@ -43,91 +40,16 @@ class GenerateCommand extends Command {
   @override
   void run() {
     switch (argResults!['type'].toString()) {
+      case 'simple':
+        generateSimple(argResults!);
+        break;
       case 'getx':
-        _generateGetXItems();
+        generateGetX(argResults!);
         break;
       default:
-        _generateItems();
+        LogService.error('Invalid Arguments');
+        break;
     }
     LogService.success('Feature ${argResults!['name']} created successfully');
-  }
-
-  /// The _generateGetXItems function generates the folder structure according
-  /// GetX imports and usage. You have to import the `get` library manually in
-  /// your pubspec.yaml file
-  ///
-  /// [dryRun] is a dev-only boolean to generate example folders
-  Future<void> _generateGetXItems({bool dryRun = true}) async {
-    var dir = 'feature';
-    if (dryRun) {
-      dir = 'example';
-    }
-    try {
-      final brick =
-          Brick.path(DirectoryService.replaceAsExpected(path: 'lib/bricks/getx'));
-      final generator = await MasonGenerator.fromBrick(brick);
-      final target = DirectoryGeneratorTarget(
-        Directory(DirectoryService.paths[dir]!),
-      );
-      await generator.generate(
-        target,
-        vars: <String, dynamic>{'name': argResults!['name'].toString()},
-      );
-    } on Exception catch (e) {
-      LogService.error(e.toString());
-    }
-  }
-
-  /// The _generateItems function generates the folder structure according
-  /// feature by folder pattern.
-  ///
-  /// [dryRun] is a dev-only boolean to generate example folders
-  void _generateItems({bool dryRun = true}) {
-    var dir = 'feature';
-    if (dryRun) {
-      dir = 'example';
-    }
-    try {
-      SampleScreen(
-        DirectoryService.paths[dir]!,
-        argResults!['name'].toString(),
-      )
-        ..create()
-        ..createExportFile();
-      SampleWidget(
-        DirectoryService.paths[dir]!,
-        argResults!['name'].toString(),
-      )
-        ..create()
-        ..createExportFile();
-      SampleModel(
-        DirectoryService.paths[dir]!,
-        argResults!['name'].toString(),
-      )..create();
-      SampleRepository(
-        DirectoryService.paths[dir]!,
-        argResults!['name'].toString(),
-      )..create();
-      SampleService(
-        DirectoryService.paths[dir]!,
-        argResults!['name'].toString(),
-      )..create();
-      SampleProvider(
-        DirectoryService.paths[dir]!,
-        argResults!['name'].toString(),
-      )
-        ..create()
-        ..createExportFile();
-      DomainExport(
-        DirectoryService.paths[dir]!,
-        argResults!['name'].toString(),
-      )..create();
-      FeatureExport(
-        DirectoryService.paths[dir]!,
-        argResults!['name'].toString(),
-      )..create();
-    } on Exception catch (e) {
-      LogService.error(e.toString());
-    }
   }
 }

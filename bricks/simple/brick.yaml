@@ -1,0 +1,13 @@
+name: simple_feature
+description: Create feature by folders
+version: 1.0.0
+
+environment:
+  mason: ">=0.1.0-dev.26 <0.1.0"
+
+vars:
+  name:
+    type: string
+    description: Enter the feature name [PascalCase only]
+    default: feature
+    prompt: Enter the feature name [PascalCase only]

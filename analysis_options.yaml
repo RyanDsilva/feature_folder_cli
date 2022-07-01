@@ -1,5 +1,5 @@
 analyzer:
-  exclude: [example/**, lib/bricks/**]
+  exclude: [example/**, bricks/**]
   strong-mode:
     implicit-casts: false
 
