@@ -26,7 +26,7 @@ feature/
 ## Command Usage :wrench:
 > Make sure you are in the root of your project
 ```sh
-ff generate -n <feature_name> -t <type>
+ff generate -n <feature_name> -t <type> -p <path>
 ```
 
 > Currently supporting only the `simple` and `getx` types
