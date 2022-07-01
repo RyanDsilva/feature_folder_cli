@@ -16,18 +16,27 @@ class GenerateCommand extends Command {
   ///
   /// [type] is a required argument that represents the type of the feature
   /// to be created
+  ///
+  /// [path] is an optional argument that represents the path of the feature
+  /// to be created inside the lib folder
   GenerateCommand() {
     argParser.addOption(
       'name',
       abbr: 'n',
       mandatory: true,
-      help: 'Name of the feature to be created.',
+      help: 'Name of the feature to be created',
     );
     argParser.addOption(
       'type',
       abbr: 't',
       mandatory: true,
       help: 'Type of feature:\n[simple] Simple\n[getx] GetX',
+    );
+    argParser.addOption(
+      'path',
+      abbr: 'p',
+      mandatory: false,
+      help: 'Path inside lib folder',
     );
   }
 

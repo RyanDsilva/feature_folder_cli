@@ -10,8 +10,12 @@ import '../utils/logs.dart';
 /// feature by folder pattern.
 ///
 /// [dryRun] is a dev-only boolean to generate example folders
-void generateSimple(ArgResults argResults, {bool dryRun = true}) async {
-  var dir = 'feature';
+void generateSimple(
+  ArgResults argResults, {
+  bool dryRun = false,
+}) async {
+  final customPath = argResults['path'] != null ? true : false;
+  var dir = argResults['path'] ?? 'feature';
   if (dryRun) {
     dir = 'example';
   }
@@ -24,7 +28,9 @@ void generateSimple(ArgResults argResults, {bool dryRun = true}) async {
     );
     final generator = await MasonGenerator.fromBrick(brick);
     final target = DirectoryGeneratorTarget(
-      Directory(DirectoryService.paths[dir]!),
+      Directory(customPath
+          ? DirectoryService.replaceAsExpected(path: 'lib/$dir')
+          : DirectoryService.paths[dir]!),
     );
     await generator.generate(
       target,

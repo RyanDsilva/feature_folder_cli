@@ -11,8 +11,12 @@ import '../utils/logs.dart';
 /// your pubspec.yaml file
 ///
 /// [dryRun] is a dev-only boolean to generate example folders
-Future<void> generateGetX(ArgResults argResults, {bool dryRun = true}) async {
-  var dir = 'feature';
+Future<void> generateGetX(
+  ArgResults argResults, {
+  bool dryRun = false,
+}) async {
+  final customPath = argResults['path'] != null ? true : false;
+  var dir = argResults['path'] ?? 'feature';
   if (dryRun) {
     dir = 'example';
   }
@@ -25,7 +29,9 @@ Future<void> generateGetX(ArgResults argResults, {bool dryRun = true}) async {
     );
     final generator = await MasonGenerator.fromBrick(brick);
     final target = DirectoryGeneratorTarget(
-      Directory(DirectoryService.paths[dir]!),
+      Directory(customPath
+          ? DirectoryService.replaceAsExpected(path: 'lib/$dir')
+          : DirectoryService.paths[dir]!),
     );
     await generator.generate(
       target,

@@ -247,7 +247,7 @@ packages:
     source: hosted
     version: "2.1.1"
   recase:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: recase
       url: "https://pub.dartlang.org"
