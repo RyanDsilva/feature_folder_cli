@@ -1,3 +1,7 @@
+# 0.3.0
+* Updated dependencies and SDK version
+* Added more documentation
+
 # 0.2.0
 * Changed project strcture to use GitPath for bricks
 * Converted the simple folder structure to use bricks
