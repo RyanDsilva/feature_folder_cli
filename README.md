@@ -30,5 +30,3 @@ ff generate -n <feature_name> -t <type> -p <path>
 ```
 
 > Currently supporting only the `simple` and `getx` types
-
-:copyright: 2022 Ryan Dsilva
