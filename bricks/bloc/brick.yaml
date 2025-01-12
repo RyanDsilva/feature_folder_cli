@@ -1,0 +1,14 @@
+name: bloc
+description: Create a feature with BLoC state management with Feature First based architecture
+
+version: 1.0.0
+
+environment:
+  mason: "0.1.0-dev.49"
+
+vars:
+  name:
+    type: string
+    description: The name of the feature being generated.
+    default: feature
+    prompt: Enter the feature name [lowercase only]

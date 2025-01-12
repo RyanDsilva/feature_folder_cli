@@ -3,7 +3,7 @@ description: >-
   CLI utility that generates a folder structure to reduce the repetitive work
   required to setup directories for models, services, repositories, screens and
   widgets.
-version: 0.3.0
+version: 1.0.0
 homepage: https://github.com/RyanDsilva/feature_folder_cli
 
 documentation: https://github.com/RyanDsilva/feature_folder_cli#folder-by-feature-cli-utility
@@ -13,13 +13,13 @@ environment:
   flutter: ">=3.3.0"
 
 dependencies:
-  ansicolor: ^2.0.1
-  args: ^2.4.1
-  mason: 0.1.0-dev.49
-  path: ^1.8.2
+  ansicolor: ^2.0.3
+  args: ^2.6.0
+  mason: 0.1.0
+  path: ^1.9.1
 
 dev_dependencies:
-  test: ^1.24.3
+  test: ^1.25.14
 
 executables:
   ff: main

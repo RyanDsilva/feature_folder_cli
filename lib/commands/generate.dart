@@ -30,7 +30,7 @@ class GenerateCommand extends Command {
       'type',
       abbr: 't',
       mandatory: true,
-      help: 'Type of feature:\n[simple] Simple\n[getx] GetX',
+      help: 'Type of feature:\n[simple] Simple\n[bloc] BLoC\n[getx] GetX',
     );
     argParser.addOption(
       'path',
@@ -54,6 +54,9 @@ class GenerateCommand extends Command {
       case 'simple':
         generateSimple(argResults!);
         break;
+      case 'bloc':
+        generateBLoC(argResults!);
+        break; 
       case 'getx':
         generateGetX(argResults!);
         break;
@@ -66,3 +69,4 @@ class GenerateCommand extends Command {
     LogService.success('Feature ${argResults!['name']} created successfully');
   }
 }
+

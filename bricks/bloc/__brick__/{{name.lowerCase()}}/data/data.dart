@@ -1,0 +1,1 @@
+export 'repository/{{name.lowerCase()}}_repository.dart';
