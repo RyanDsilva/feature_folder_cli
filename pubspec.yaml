@@ -10,7 +10,6 @@ documentation: https://github.com/RyanDsilva/feature_folder_cli#folder-by-featur
 
 environment:
   sdk: "^3.6.0"
-  flutter: ">=3.38.0"
 
 dependencies:
   ansicolor: ^2.0.3
